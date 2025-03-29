@@ -31,8 +31,8 @@ def predict_diabetes(input_data):
     return 1 if prediction[0] == 1 else 0
 
 def main():
-    st.title("Diabetes Prediction Web App")
-    st.write("Enter patient details to predict the likelihood of diabetes.")
+    st.title("Diabetes Prediction App")
+    st.write("Enter patient details to predict the likelihood of diabetes:")
 
     # User inputs
     pregnancies = st.number_input("Pregnancies", min_value=0, max_value=17, value=5)
@@ -51,9 +51,9 @@ def main():
     if st.button("Predict"):
         prediction = predict_diabetes(input_data)
         if prediction == 0:
-            st.success(f"### Prediction: THE PERSON IS NOT DIABETIC",  icon="✅")
+            st.success(f"Prediction: THE PERSON IS NOT DIABETIC",  icon="✅")
         else:
-            st.error(f"### Prediction: THE PERSON IS DIABETIC", icon="🚨")
+            st.error(f"Prediction: THE PERSON IS DIABETIC", icon="🚨")
 
 if __name__ == "__main__":
     main()
